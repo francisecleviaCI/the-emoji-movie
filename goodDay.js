@@ -1,14 +1,19 @@
 const day = require('./day.js');
 
+let i = day.length;
 
-for (let i = day.length -1; i >= 0; i--){
 
-    const goodDay = function(){
-        console.log(day[i]); 
-    }
-    setInterval(goodDay, 1000);
-    
+const goodDay = function(){
+    i = i - 1
+    console.log(day[i]); 
+
+        
 }
-    
-    
+//*** Run and then cancel*/
+const amazingTimer = setInterval(goodDay, 1000); //This will run every second.
+
+const stopPlaying = function(){//This is the cancellation function
+    clearInterval(amazingTimer)
+}
+setTimeout(stopPlaying, 12000)//This function runs the cancellation function and stops the repetition after a specified time.
     
